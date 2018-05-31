@@ -9,10 +9,10 @@ set(APPLICATION "app_${MODULE}")
 include_directories("./")
 
 # Add all submodules
-add_subdirectory(test)
 add_subdirectory(src)
+add_subdirectory(test)
 add_subdirectory(application)
-configure_file(Prim.txt PrimGraph.txt COPYONLY)
+
 
 #############################################
 ##### Testing

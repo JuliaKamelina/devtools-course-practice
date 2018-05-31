@@ -100,7 +100,8 @@ std::string PrimApp::operator()(int argc, const char** argv) {
     }
 
     vector<Node> core = Prim(arg.graph, arg.dem);
-    for (int i = 0; i < core.size(); i++) {
+    int size = core.size();
+    for (int i = 0; i < size; i++) {
       stream << "Distance " << core[i].dist << " First " << core[i].first
              << " Second " << core[i].second << std::endl;
     }
