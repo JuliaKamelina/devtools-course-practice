@@ -3,8 +3,8 @@
 #include <string>
 #include <vector>
 
-#include "include\prim.hpp"
-#include "include\heap.hpp"
+#include "include/prim.hpp"
+#include "include/heap.hpp"
 
 vector<Node> Prim(vector<vector<int> >g, int d) {
   vector<bool> visited(g.size(), false);

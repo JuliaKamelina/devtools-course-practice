@@ -8,9 +8,9 @@
 #include <vector>
 #include <sstream>
 
-#include "include\heap.hpp"
-#include "include\prim-app.hpp"
-#include "include\prim.hpp"
+#include "include/heap.hpp"
+#include "include/prim-app.hpp"
+#include "include/prim.hpp"
 
 using std::vector;
 
