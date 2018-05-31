@@ -56,7 +56,7 @@ TEST_F(PrimAppTest, Is_Checking_Number_Of_Arguments) {
 }
 
 TEST_F(PrimAppTest, Can_Detect_Wrong_Number_Format) {
-  vector<string> args = { "-p", "../PrimGraph.txt", "-d", "j" };
+  vector<string> args = { "-p", "../modules/binary-template-heap/PrimGraph.txt", "-d", "j" };
 
   Act(args);
 
@@ -64,7 +64,7 @@ TEST_F(PrimAppTest, Can_Detect_Wrong_Number_Format) {
 }
 
 TEST_F(PrimAppTest, Can_Detect_Wrong_Demention) {
-  vector<string> args = { "-p", "../PrimGraph.txt", "-d", "0" };
+  vector<string> args = { "-p", "../modules/binary-template-heap/PrimGraph.txt", "-d", "0" };
 
   Act(args);
 
@@ -80,7 +80,7 @@ TEST_F(PrimAppTest, Can_Detect_Wrong_File_Name) {
 }
 
 TEST_F(PrimAppTest, Can_Compute_Core) {
-  vector<string> args = { "-p", "../PrimGraph.txt", "-d", "2" };
+  vector<string> args = { "-p", "../modules/binary-template-heap/PrimGraph.txt", "-d", "2" };
 
   Act(args);
 
@@ -88,7 +88,7 @@ TEST_F(PrimAppTest, Can_Compute_Core) {
 }
 
 TEST_F(PrimAppTest, Can_Compute_Core_Without_Demention) {
-  vector<string> args = { "-p", "../PrimGraph.txt" };
+  vector<string> args = { "-p", "../modules/binary-template-heap/PrimGraph.txt" };
 
   Act(args);
 
@@ -96,7 +96,7 @@ TEST_F(PrimAppTest, Can_Compute_Core_Without_Demention) {
 }
 
 TEST_F(PrimAppTest, Can_Compute_Core_With_Different_Demention) {
-  vector<string> args = { "-p", "../PrimGraph.txt", "-d", "3" };
+  vector<string> args = { "-p", "../modules/binary-template-heap/PrimGraph.txt", "-d", "3" };
 
   Act(args);
 
