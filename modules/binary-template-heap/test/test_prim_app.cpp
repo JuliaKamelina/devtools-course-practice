@@ -8,7 +8,7 @@
 #include <functional>
 #include <iterator>
 
-#include "include\prim-app.hpp"
+#include "include/prim-app.hpp"
 
 using ::testing::internal::RE;
 using std::vector;
