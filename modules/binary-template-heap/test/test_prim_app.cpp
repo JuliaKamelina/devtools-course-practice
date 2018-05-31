@@ -15,30 +15,28 @@ using std::vector;
 using std::string;
 
 class PrimAppTest : public ::testing::Test {
-protected:
-  // virtual void SetUp() {}
+ protected:
+    void Act(vector<string> args_) {
+      vector<const char*> options;
 
-  void Act(vector<string> args_) {
-    vector<const char*> options;
+      options.push_back("appname");
+      for (size_t i = 0; i < args_.size(); ++i) {
+        options.push_back(args_[i].c_str());
+      }
 
-    options.push_back("appname");
-    for (size_t i = 0; i < args_.size(); ++i) {
-      options.push_back(args_[i].c_str());
-    }
+      const char** argv = &options.front();
+      int argc = static_cast<int>(args_.size()) + 1;
 
-    const char** argv = &options.front();
-    int argc = static_cast<int>(args_.size()) + 1;
-
-    output_ = app_(argc, argv);
+      output_ = app_(argc, argv);
   }
 
   void Assert(std::string expected) {
     EXPECT_TRUE(RE::PartialMatch(output_, RE(expected)));
   }
 
-private:
-  PrimApp app_;
-  string output_;
+ private:
+    PrimApp app_;
+    string output_;
 };
 
 TEST_F(PrimAppTest, Do_Print_Help_Without_Arguments) {
