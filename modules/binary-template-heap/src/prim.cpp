@@ -1,4 +1,4 @@
-﻿//  Copyright 2018 Kamelina Julia
+﻿/* Copyright 2018 Kamelina Julia */
 
 #include <string>
 #include <vector>

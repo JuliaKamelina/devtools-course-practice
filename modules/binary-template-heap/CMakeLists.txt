@@ -12,6 +12,7 @@ include_directories("./")
 add_subdirectory(src)
 add_subdirectory(test)
 add_subdirectory(application)
+configure_file(Prim.txt ./PrimGraph.txt COPYONLY)
 
 
 #############################################
