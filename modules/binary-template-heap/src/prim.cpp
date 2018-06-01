@@ -11,7 +11,7 @@ vector<Node> Prim(vector<vector<int> >g, int d) {
   atal::heap<Node, NodeCompare> h;
   try {
   h.setDim(d);
-  } catch (std::logic_error str) {
+  } catch (std::logic_error &str) {
     throw std::string(str.what());
   }
 

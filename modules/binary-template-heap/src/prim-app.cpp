@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <fstream>
 
 #include "include/heap.hpp"
 #include "include/prim-app.hpp"
@@ -52,16 +53,18 @@ int parseInt(const char* arg) {
 }
 
 vector<vector<int> > parseFile(const char* arg) {
-  FILE* f = fopen(arg, "r");
-  if (f == 0) {
+  //FILE* f = fopen(arg, "r");
+  std::ifstream f;
+  f.open(arg);
+  if (!f) {
     throw std::string("FILE NOT FOUND!");
   }
 
   vector<vector<int> > g;
   vector<int> v;
-  char ch = fgetc(f);
 
-  while (ch != EOF) {
+  while (!f.eof()) {
+    char ch = f.get();
     if (ch != ' ') {
       if (ch == '\n') {
         g.push_back(v);
@@ -70,10 +73,9 @@ vector<vector<int> > parseFile(const char* arg) {
         v.push_back(ch - '0');
       }
     }
-    ch = fgetc(f);
   }
   g.push_back(v);
-  fclose(f);
+  f.close();
 
   return g;
 }
