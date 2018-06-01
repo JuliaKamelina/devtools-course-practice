@@ -44,6 +44,14 @@ set_tests_properties (${prefix}_can_Detect_Wrong_Demention PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
+    NAME ${prefix}_Do_Print_Help_With_Invalid_Key
+    COMMAND ${APPLICATION} -p ./PrimGraph.txt -a j
+)
+set_tests_properties (${prefix}_Do_Print_Help_With_Invalid_Key PROPERTIES
+    PASS_REGULAR_EXPRESSION "This application implements Prim's algorithm"
+    LABELS "${MODULE}")
+
+add_test(
     NAME ${prefix}_can_Detect_Wrong_File_Name
     COMMAND ${APPLICATION} -p ./PrimGraph1.txt
 )

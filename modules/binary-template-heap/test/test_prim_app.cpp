@@ -47,6 +47,14 @@ TEST_F(PrimAppTest, Do_Print_Help_Without_Arguments) {
   Assert("This application implements Prim's algorithm*");
 }
 
+TEST_F(PrimAppTest, Do_Print_Help_With_Invalid_Key) {
+  vector<string> args = { "-p", "../PrimGraph.txt", "-a", "j" };
+
+  Act(args);
+
+  Assert("This application implements Prim's algorithm*");
+}
+
 TEST_F(PrimAppTest, Is_Checking_Number_Of_Arguments) {
   vector<string> args = { "1"};
 

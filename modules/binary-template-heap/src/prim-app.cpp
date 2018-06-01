@@ -53,7 +53,6 @@ int parseInt(const char* arg) {
 }
 
 vector<vector<int> > parseFile(const char* arg) {
-  //FILE* f = fopen(arg, "r");
   std::ifstream f;
   f.open(arg);
   if (!f) {
